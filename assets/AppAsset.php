@@ -26,4 +26,10 @@ class AppAsset extends AssetBundle
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
     ];
+
+    public static function register($view)
+    {
+        AdminLteAsset::register($view);
+        return parent::register($view);
+    }
 }
