@@ -20,16 +20,12 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/site.css',
     ];
-    public $js = [
-    ];
+    public $js = [];
+
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
+        'yii\web\JqueryAsset',
+        'app\assets\AdminLteAsset',
     ];
-
-    public static function register($view)
-    {
-        AdminLteAsset::register($view);
-        return parent::register($view);
-    }
 }
