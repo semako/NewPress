@@ -14,3 +14,4 @@ require __DIR__ . '/../vendor/autoload.php';
 
 define('YII_DEBUG', getenv('APP_DEBUG') === 'true');
 define('YII_ENV', getenv('APP_ENV'));
+define('INSTALLED', getenv('INSTALLED') === 'true');

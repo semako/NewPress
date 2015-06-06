@@ -6,7 +6,20 @@ $config = [
     'id' => 'newpress-web',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+        ],
+    ],
     'components' => [
+        'urlManager' => [
+            'enablePrettyUrl' => true,
+            'showScriptName' => false,
+            'enableStrictParsing' => false,
+            'rules' => [
+
+            ],
+        ],
         'request' => [
             'cookieValidationKey' => 'Sge63FL-zXWQshRPisgXBFvlg-o87XwT',
         ],

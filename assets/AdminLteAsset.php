@@ -22,20 +22,27 @@ class AdminLteAsset extends AssetBundle
     /**
      * @var string
      */
-    public $sourcePath = '@vendor/almasaeed2010/adminlte/dist';
+    public $sourcePath = '@vendor/almasaeed2010/adminlte';
 
     /**
      * @var array
      */
     public $css = [
-        'css/AdminLTE.min.css',
+        'dist/css/AdminLTE.min.css',
+        'plugins/jvectormap/jquery-jvectormap-1.2.2.css',
     ];
 
     /**
      * @var array
      */
     public $js = [
-        'js/app.min.js',
+        'plugins/fastclick/fastclick.min.js',
+        'dist/js/app.min.js',
+        'plugins/sparkline/jquery.sparkline.min.js',
+        'plugins/jvectormap/jquery-jvectormap-1.2.2.min.js',
+        'plugins/jvectormap/jquery-jvectormap-world-mill-en.js',
+        'plugins/slimScroll/jquery.slimscroll.min.js',
+        'plugins/chartjs/Chart.min.js',
     ];
 
     /**
@@ -43,22 +50,16 @@ class AdminLteAsset extends AssetBundle
      */
     public $skin = '_all-skins';
 
+    public $depends = [
+        'app\assets\FontAwesomeAsset',
+        'app\assets\IonIconsAsset',
+    ];
+
     /**
      *
      */
     public function init()
     {
-        // If env is DEV use src instead of min
-        if (YII_ENV_DEV) {
-            $this->css = [
-                'css/AdminLTE.css',
-            ];
-
-            $this->js = [
-                'js/app.js',
-            ];
-        }
-
         // Try to use a color scheme for asset bundle
         if ($this->skin) {
             $this->skin = strtolower($this->skin);
@@ -67,7 +68,7 @@ class AdminLteAsset extends AssetBundle
                 throw new InvalidValueException('Invalid skin specified');
             }
 
-            $this->css[] = sprintf('css/skins/%s' . (!YII_ENV_DEV ? '.min' : '') . '.css', $this->skin);
+            $this->css[] = sprintf('dist/css/skins/%s' . (!YII_ENV_DEV ? '.min' : '') . '.css', $this->skin);
         }
 
         parent::init();

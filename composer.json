@@ -19,7 +19,9 @@
     "yiisoft/yii2-bootstrap": "*",
     "yiisoft/yii2-swiftmailer": "*",
     "almasaeed2010/adminlte": ">=2.1",
-    "vlucas/phpdotenv": "*"
+    "vlucas/phpdotenv": "*",
+    "fortawesome/font-awesome": ">=4.3",
+    "driftyco/ionicons": ">=2.0"
   },
   "require-dev": {
     "yiisoft/yii2-codeception": "*",
